@@ -1,0 +1,12 @@
+# ignore node dependency directories
+node_modules/
+/classes/vendor
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+composer.lock
+
+# online editing files
+/assets/css/custom.scss

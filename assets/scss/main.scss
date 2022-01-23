@@ -1,0 +1,34 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import './components/header';
+@import './components/breadcrumbs';
+@import './components/footer';
+@import './components/wrapper';
+@import "./components/services";
+@import "./components/scrollableList";
+@import "./components/documents";
+@import "./components/reviews";
+@import "./components/pagination";
+@import "./components/partners";
+@import "./components/hotline";
+@import "./components/contacts";
+@import "./components/comments";
+@import "./components/news";
+@import "./components/hh";
+@import "./components/about";
+@import "./components/mobail-menu";
+@import "./components/app";
+@import "./components/faq";
+@import "./components/clients";
+@import "./components/slaider";
+@import "./components/tables";
+@import "./components/mainpage";
+@import "./components/hystmodal";
+@import "./components/blog";
+
+@import "theme";

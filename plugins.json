@@ -1,0 +1,42 @@
+{
+  "SVG Support": {
+    "key": "svg-support",
+    "path": "svg-support/svg-support.php"
+  },
+  "Cyr-To-Lat": {
+    "key": "cyr2lat",
+    "path": "cyr2lat/cyr-to-lat.php"
+  },
+  "Navz photo gallery": {
+    "key": "navz-photo-gallery",
+    "path": "navz-photo-gallery/navz-photo-gallery.php"
+  },
+  "Advanced Custom Fields": {
+    "key": "advanced-custom-fields",
+    "path": "advanced-custom-fields/acf.php"
+  },
+  "Classic Editor": {
+    "key":"classic-editor",
+    "path": "classic-editor/classic-editor.php"
+  },
+  "Classic Widgets": {
+    "key": "classic-widgets",
+    "path": "classic-widgets/classic-widgets.php"
+  },
+  "Contact Form 7": {
+    "key": "contact-form-7",
+    "path": "contact-form-7/wp-contact-form-7.php"
+  },
+  "Contact Form 7 Database Addon": {
+    "key": "contact-form-cfdb7",
+    "path": "contact-form-cfdb7/contact-form-cfdb-7.php"
+  },
+  "Breadcrumb NavXT": {
+    "key": "breadcrumb-navxt",
+    "path": "breadcrumb-navxt/breadcrumb-navxt.php"
+  },
+  "Post Views Counter": {
+    "key": "post-views-counter",
+    "path": "post-views-counter/post-views-counter.php"
+  }
+}

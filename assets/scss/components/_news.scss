@@ -1,0 +1,432 @@
+.news {
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @include before('xl') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include before('md') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    border-radius: 4px;
+    background-color: rgba(248, 249, 250, 0.5);
+    box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);
+    max-width: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include before('xl') {
+      max-width: 100%;
+    }
+
+    @include before('md') {
+      max-width: none;
+    }
+
+    &-img {
+      height: 260px;
+      min-height: 260px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &-prompt {
+      background-color: var(--corporate-v-0);
+      border-radius: 4px;
+      padding: 8px 15px;
+      color: var(--color-gray-100);
+      font-size: 12px;
+      font-weight: 700;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 1;
+    }
+
+    &-content {
+      padding: 15px 20px 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        margin: 0 0 10px 0;
+      }
+    }
+
+    &-title {
+
+      &--link {
+        font-size: 20px;
+        line-height: 26px;
+        color: var(--corporate-v-0);
+        font-weight: 600;
+        max-height: 52px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover,
+        &:focus {
+          color: var(--corporate-v-2);
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 300;
+      max-height: 110px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      p {
+        margin: 0 !important;
+      }
+    }
+
+    &-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 20px;
+      color: var(--corporate-v-0);
+      font-size: 14px;
+    }
+
+    &-date {
+        font-family: OpenSans;
+        font-weight: 600;
+        font-size: 12px;
+        color: var(--color-gray-600);
+    }
+
+    &-more {
+      color: var(--corporate-v-0);
+      display: flex;
+      align-items: center;
+      line-height: 18px;
+
+      svg {
+        fill: var(--corporate-v-0);
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--corporate-v-2);
+        text-decoration: underline;
+
+        svg {
+          fill: var(--corporate-v-2);
+        }
+      }
+    }
+  }
+
+  &__sidebar {
+    padding: 20px 20px 35px;
+    box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+    border-radius: 4px;
+    background-color: #fff;
+    display: block;
+    margin-left: 10px;
+
+    @include before('xl') {
+      display: none;
+    }
+
+    &-block {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      color: var(--corporate-v-0);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-form {
+      position: relative;
+    }
+
+    &-input {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid var(--color-gray-200);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--color-gray-900);
+      position: relative;
+      width: 100%;
+
+      @include placeholder {
+        color: var(--color-gray-600);
+      }
+
+      &:hover {
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+
+      &:focus {
+        border: 1px solid var(--color-gray-300);
+
+        &::placeholder {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &-button {
+      border: none;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--color-gray-500);
+      }
+    }
+  }
+
+
+  &__element {
+
+    &-detail {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--color-gray-600);
+      margin-bottom: 25px;
+    }
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child) {
+        padding-right: 10px;
+        margin-right: 10px;
+      }
+
+      @include before('md') {
+        margin-bottom: 5px;
+      }
+
+      span {
+        font-family: OpenSans;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          width: 3px;
+          height: 3px;
+          background-color: var(--color-gray-600);
+          position: absolute;
+          right: 0;
+          top: 50%;
+          border-radius: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &-date, .post-views-count {
+      font-family: OpenSans;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    &-bottom {
+      width: 100%;
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: 30px;
+      margin-top: 50px;
+
+      span {
+        margin-right: 10px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-img {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 20px 0 40px;
+    }
+
+    &-image {
+      border-radius: 10px;
+      border: 20px solid var(--color-gray-300);
+      object-fit: cover;
+
+      @include before('md') {
+        border-width: 10px;
+      }
+    }
+
+    &-tooltip {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-gray-900);
+      margin-top: 5px;
+      text-align: center;
+    }
+  }
+
+  &__last {
+    &.scrollableList {
+      display: block;
+      width: 100%;
+    }
+
+
+    .scrollableList {
+      &__items {
+        @include after('xl') {
+          width: 100%;
+          margin-left: 0;
+          padding-left: 0;
+          justify-content: space-between;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-block {
+      &:not(:last-child) {
+        margin-right: 15px;
+
+        @include after('xxl') {
+          margin-right: 18px;
+        }
+      }
+
+     @include after('xl') {
+        min-width: 300px;
+        width: calc(100% / 4);
+        max-width: 340px;
+      }
+
+      @include before('xl') {
+        min-width: 270px;
+        max-width: 270px;
+      }
+
+    }
+
+
+    &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      min-height: 240px;
+      max-height: 240px;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      padding: 15px;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 29, 49, 0.6);
+        border-radius: 4px;
+        transition: all 0.2s;
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          background-color: rgba(22, 29, 49, 0.2);
+          transition: all 0.2s;
+        }
+      }
+    }
+
+    &-prompt {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      border-radius: 4px;
+      background-color: var(--corporate-v-0);
+      color: var(--color-gray-100);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+      z-index: 1;
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-gray-100);
+      margin-bottom: 10px;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    &-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-gray-100);
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+
+}

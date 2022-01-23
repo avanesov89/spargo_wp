@@ -1,0 +1,177 @@
+.hystmodal__opened {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+.hystmodal__shadow{
+    position: fixed;
+    border:none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-color: #161D31;
+}
+.hystmodal__shadow--show{
+    pointer-events: auto;
+    opacity: 0.4;
+}
+.hystmodal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 1;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    z-index: 99;
+    visibility: hidden;
+}
+.hystmodal--active{
+    opacity: 1;
+}
+.hystmodal--moved,
+.hystmodal--active{
+    pointer-events: auto;
+    visibility: visible;
+}
+.hystmodal__wrap {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.hystmodal__window {
+    margin: 50px 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: var(--color-gray-100);
+    width: 100%;
+    max-width: 580px;
+    overflow: visible;
+    opacity: 0;
+    border-radius: 10px;
+    padding: 40px;
+
+    @include before('md') {
+        padding: 25px 20px;
+        width: calc(100% - 32px);
+    }
+}
+.hystmodal--active .hystmodal__window{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hystmodal {
+    &__close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        @include before('md') {
+            top: 0;
+            right: 0;
+        }
+    
+        svg {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            min-height: 30px;
+            display: block;
+        }
+    }
+
+    &__title, h3 {
+        font-size: 26px;
+        line-height: 38px;
+        font-weight: 600;
+        color: var(--corporate-v-1);
+        margin-top: 0;
+        margin-bottom: 5px;
+
+        @include before('md') {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--corporate-v-1);
+
+        @include before('md') {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    &__form {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+
+        @include before('md') {
+            margin-top: 30px;
+        }
+    }
+
+    .main__form-field {
+        &:last-child {
+            margin-top: 15px;
+        }
+    }
+
+    .main__form-text {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        text-align: left;
+    }
+
+    .main__form-link {
+        display: contents;
+    }
+
+    .main__button {
+        margin-top: 15px;
+        display: table;
+        max-width: max-content;
+    }
+
+    .wpcf7-spinner {
+        position: absolute;
+    }
+}

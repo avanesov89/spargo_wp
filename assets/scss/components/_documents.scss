@@ -1,0 +1,101 @@
+.documents {
+  margin: 40px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+
+  @include from-to('md', 'xxl') {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  @include before('md') {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+  }
+
+  &__item {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 310px;
+
+    &::before {
+      display: none;
+    }
+
+    @include before('xl') {
+      min-width: auto;
+    }
+  }
+
+  &__img {
+    /*border: 20px solid rgba(248, 249, 250, 0.5);
+    box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);*/
+    border: 20px solid var(--color-gray-300);
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 430px;
+    position: relative;
+    overflow: hidden;
+
+    @include before('md') {
+      border-width: 10px;
+      max-height: 200px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    margin-top: 10px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+
+    @include before('md') {
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 10px;
+      margin-top: 5px;
+    }
+  }
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 73, 94, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.2s;
+
+    svg {
+      fill: var(--color-gray-100);
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transition: all 0.2s;
+    }
+  }
+}

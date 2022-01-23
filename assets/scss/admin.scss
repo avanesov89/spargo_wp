@@ -1,0 +1,68 @@
+.admin-meta {
+  &__review {
+    &-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.wp-list-table {
+  .column-banner-thumb,
+  .column-review-thumbnail,
+  .column-app-thumb{
+    width: 80px;
+
+    img {
+      display: block;
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  .column-document-thumb,
+  .column-partner-thumb {
+    width: 120px;
+
+    img {
+      display: block;
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  .column-service-thumb {
+    width: 100px;
+
+    svg {
+      display: block;
+      width: 92px;
+      height: auto;
+    }
+  }
+
+  .review-conent-position {
+    font-weight: 700;
+  }
+
+  .column-taxonomy-department {
+    width: 120px;
+  }
+
+  .column-vacancy-data,
+  .column-partner-data {
+    &__item {
+      display: flex;
+      align-items: center;
+
+      span {
+        display: block;
+
+        + span {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

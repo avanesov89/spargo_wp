@@ -1,0 +1,32 @@
+.section__slaider {
+    display: block;
+    width: 100%;
+
+    @include before('md') {
+        display: none;
+    }
+
+    &-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    &-dot {
+        width: 20px;
+        height: 4px;
+        border-radius: 10px;
+        background-color: var(--corporate-v-1);
+        cursor: pointer;
+    
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    
+        &--active {
+            background-color: var(--corporate-v-2);
+            width: 40px;
+        }
+    }
+}

@@ -1,0 +1,251 @@
+.wrapper {
+  margin-top: 50px;
+
+  @include before('lg') {
+    margin-top: 40px;
+  }
+
+  @include before('md') {
+    margin-top: 35px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    @include before('lg') {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include before('lg') {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include before('lg') {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  h4, h5, h6 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include before('lg') {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__content {
+
+    width: 100%;
+
+    @include before('xl') {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    &-75 {
+      @include after('xl') {
+        max-width: 75%;
+        padding-right: 20px;
+      }
+    }
+
+    &-code {
+      overflow: auto;
+      background-color: var(--color-gray-200);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__sidebar {
+
+    width: 25%;
+    position: relative;
+
+    @include before('xl') {
+      position: sticky;
+      bottom: 20px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    &-sticky {
+      position: sticky;
+      top: 20px;
+      width: 100%;
+
+      @include after('xl') {
+        max-width: 340px;
+      }
+    }
+
+    &-action,
+    &-all {
+      padding: 20px;
+      box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+      border-radius: 4px;
+      margin-bottom: 30px;
+      background-color: #fff;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      @include before('xl') {
+        margin-bottom: 0;
+      }
+    }
+
+    &-all {
+      @include before('xl') {
+        display: none;
+      }
+    }
+
+    &-title {
+      color: var(--corporate-v-1);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @include before('xl') {
+        display: none;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      color: var(--color-gray-900);
+      font-weight: 500;
+      margin-bottom: 20px;
+      line-height: 18px;
+
+      @include before('xl') {
+        display: none;
+      }
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-list {
+      margin: 0;
+      width: 100%;
+      position: relative;
+
+      &::before {
+        display: none !important;
+      }
+
+      &:last-child {
+        .wrapper__sidebar-link {
+          border-bottom: none;
+        }
+      }
+
+      &--active {
+        &::after {
+          content: '';
+          position: absolute;
+          left: -20px;
+          right: -20px;
+          top: 0;
+          background-color: var(--color-gray-100);
+          height: 100%;
+          display: block;
+          z-index: 0;
+        }
+      }
+    }
+
+    &-link,
+    &-span {
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid var(--color-gray-200);
+      color: var(--color-gray-800);
+      font-weight: 600;
+      transition: all 0.2s;
+      position: relative;
+      z-index: 1;
+
+      svg {
+        fill: var(--color-gray-800);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--corporate-v-2);
+        transition: all 0.2s;
+
+        svg {
+          fill: var(--corporate-v-2);
+          transition: all 0.2s;
+        }
+      }
+    }
+
+    &-span {
+      color: var(--corporate-v-2);
+      border-top: 1px solid var(--color-gray-100);
+      border-bottom: none;
+      width: 100%;
+      margin-top: -1px;
+
+      svg {
+        display: none;
+      }
+    }
+
+    .main__button {
+      padding: 18px 50px;
+      font-size: 20px;
+      max-width: max-content;
+      margin: 0 auto;
+
+      @include before('xl') {
+        padding: 15px 50px;
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+.vacancies {
+
+  &__block {
+
+    padding-top: 35px;
+
+    @include before('lg') {
+      padding-top: 25px;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--corporate-v-1);
+
+      @include before('lg') {
+        font-size: 22px;
+      }
+
+      @include before('md') {
+        font-size: 20px;
+      }
+    }
+
+    &-list {
+      margin-top: 20px;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @include before('lg') {
+        padding-left: 5px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      @include before('md') {
+        display: block;
+      }
+    }
+
+    &-department {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 26px;
+      padding-right: 5px;
+      display: inline;
+
+      @include before('xl') {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      span {
+        position: relative;
+        background-image: linear-gradient(90deg,rgba(51,122,183,.5),rgba(51,122,183,.5) 60%,transparent 0,transparent);
+        background-position: 0 bottom;
+        background-size: 6px 1px;
+        background-repeat: repeat-x;
+        color: var(--corporate-v-2);
+      }
+    }
+
+    &-counter {
+      font-weight: 600;
+      color: var(--corporate-v-0);
+      display: inline-block;
+      /*position: absolute;
+      top: 0;
+      right: -35px;
+      min-width: 40px;*/
+    }
+
+    details summary {
+      display: block;
+    }
+  }
+
+  &__open {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    margin-bottom: 30px;
+
+    @include before('xl') {
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    &-item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 20px 10px 15px;
+      border-bottom: 1px solid var(--color-gray-200);
+      width: 100%;
+      max-width: 920px;
+
+      @include before('xl') {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+      }
+    }
+
+    &-position {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--corporate-v-3);
+      max-width: 390px;
+      min-width: 390px;
+
+      @include before('xl') {
+        font-size: 16px;
+        max-width: none;
+        min-width: auto;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-salary {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--corporate-v-0);
+      padding-left: 80px;
+      white-space: nowrap;
+
+      @include before('xl') {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+
+    &-city {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--corporate-v-0);
+      text-align: right;
+
+      @include before('xl') {
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__bottom {
+
+    width: 100%;
+
+    @include before('md') {
+      position: sticky;
+      bottom: 10px;
+    }
+
+    .main__button {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      @include before('md') {
+        padding: 10px 15px;
+        font-size: 15px;
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+
+    @include after('xl') {
+      box-shadow: none;
+      border-top: 1px solid var(--color-gray-200);
+      border-radius: 0;
+      padding: 30px 0 0 0;
+      margin-top: 30px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__salary {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--corporate-v-1);
+    margin-bottom: 30px;
+
+    @include before('md') {
+      font-size: 18px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 30px;
+
+    &-item {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--corporate-v-0);
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+
+details {
+
+  summary {
+    @include before('md') {
+      justify-content: space-between;
+    }
+  }
+
+  &[open] {
+    .vacancies__block-department {
+      font-weight: 800;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+.blog {
+    &__info {
+        &-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+        &-author {
+            display: flex;
+            align-items: center;
+            margin: 10px 0 30px;
+        }
+        &-img {
+            border-radius: 50%;
+            background-color: var(--color-gray-200);
+            box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+            border: 3px solid #fff;
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-name {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            line-height: 26px;
+            color: var(--corporate-v-0);
+        }
+        &-status {
+            font-size: 14px;
+            line-height: 16px;
+            color: var(--color-gray-600);
+        }
+        .tags {
+            margin-top: 10px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        border-radius: 4px;
+        box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+        background-color: rgba(248, 249, 250, 0.5);
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        @include before('md') {
+            flex-direction: column;
+        }
+
+        &-img {
+            width: 340px;
+            height: 260px;
+            flex-shrink: 0;
+
+            @include before('md') {
+                width: 100%;
+            }
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include after('md') {
+                border-radius: 4px 0 0 4px;
+            }
+        }
+
+        &-noimage {
+            display: none;
+        }
+
+        &-content {
+            padding: 15px 20px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h3 {
+            font-size: 22px;
+            line-height: 28px;
+            margin-top: 0;
+
+            @include before('md') {
+                font-size: 20px;
+                line-height: 26px;
+            }
+
+            & > a {
+                text-decoration: none;
+                color: var(--corporate-v-0);
+
+                &:hover, &:focus {
+                    color: var(--corporate-v-2);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--color-gray-900);
+            font-weight: 300;
+
+            @include before('md') {
+                max-height: 110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+
+            .news__element-detail {
+                margin-bottom: 0;
+
+                @include before('md') {
+                    & > div {
+                        display: none;
+                    }
+                }
+            }
+
+            .news__element-item {
+                margin-bottom: 0;
+
+                @include before('md') {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            font-size: 14px;
+            line-height: 18px;
+            color: var(--corporate-v-0);
+
+            svg {
+                fill: var(--corporate-v-0);
+            }
+
+            &:hover, &:focus {
+                color: var(--corporate-v-2);
+                text-decoration: underline;
+                
+                svg {
+                    fill: var(--corporate-v-2);
+                }
+            }
+        }
+    }
+}
+
+.codepen__import {
+    margin: 20px 0;
+}

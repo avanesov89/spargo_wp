@@ -1,0 +1,351 @@
+.footer {
+    background-color: var(--corporate-v-1);
+    padding: 40px 0 0;
+    margin-top: auto;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include before('xl') {
+            justify-content: flex-start;
+        }
+
+        @include before('md') {
+            flex-direction: column;
+        }
+    }
+
+    &__block {
+        &-title {
+            font-size: 24px;
+            color: var(--color-gray-100);
+            font-weight: 700;
+            margin-bottom: 20px;
+
+            @include before('md') {
+                margin-top: 30px;
+            }
+        }
+
+        &-subscription {
+            @include before('xl') {
+                display: none;
+            }
+        }
+
+        @include before('xl') {
+            min-width: 50%;
+           &:nth-child(1) {
+               flex-basis: 100%;
+           }
+        }
+    }
+
+    &__mails {
+        display: flex;
+        margin-bottom: 10px;
+
+        &-item {
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
+
+        &-link {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--color-gray-100);
+            text-decoration: underline;
+            transition: all 0.2s;
+
+            &:hover, &:focus, &:active {
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    &__address {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--color-gray-100);
+
+        &-tooltip {
+            font-size: 14px;
+            color: var(--color-gray-100);
+            font-weight: 300;
+            display: none;
+            flex-basis: 100%;
+            margin-top: 5px;
+
+            @include before('xl') {
+                display: flex;
+            }
+        }
+    }
+
+    &__phones {
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                padding-left: 12px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+
+        &-link {
+            color: var(--color-gray-100);
+            font-weight: 800;
+            font-size: 20px;
+            transition: all 0.2s;
+
+            &:hover, &:focus, &:active {
+                color: lighten(#337AB7, 20.25%);
+                transition: all 0.2s;
+            }
+        }
+
+        &-tooltip {
+            font-size: 14px;
+            color: var(--color-gray-100);
+            font-weight: 300;
+            margin-left: 5px;
+        }
+
+        &-callback {
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover, &:focus, &:active {
+                color: lighten(#337AB7, 20.25%);
+                transition: all 0.2s;
+            }
+        }
+
+        &::after {
+            content: '';
+            background-color: rgba(248,249,250,0.10);
+            height: 1px;
+            width: 100%;
+            display: block;
+            margin: 15px 0;
+        }
+    }
+
+    &__social {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        position: relative;
+
+        @include before('md') {
+            margin-bottom: 20px;
+        }
+
+        &-item {
+            @include flex-v-center;
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        &-link {
+            display: block;
+
+            svg {
+                fill: var(--color-gray-100);
+                margin-right: 5px;
+                transition: all 0.2s;
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover, &:focus, &:active {
+                svg {
+                    fill: lighten(#337AB7, 20.25%);
+                    transition: all 0.2s;
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            background-color: rgba(248,249,250,0.10);
+            height: 1px;
+            width: 100%;
+            display: flex;
+            flex-basis: 100%;
+            margin:0;
+            position: absolute;
+            bottom: -20px;
+
+            @include after('xl') {
+                display: none;
+            }
+        }
+    }
+
+    &__list {
+        flex-direction: column;
+
+        &-item {
+            padding-left: 5px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        &-link {
+            font-size: 14px;
+            color: var(--color-gray-100);
+            font-weight: 600;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+
+            &::before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: var(--color-gray-100);
+                margin-right: 10px;
+            }
+
+            &:hover, &:focus, &:active {
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: none;
+                transition: all 0.2s;
+
+                &::before {
+                    background-color: lighten(#337AB7, 20.25%);
+                }
+            }
+
+            &--active {
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__subscription {
+
+        &-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-gray-100);
+            margin-bottom: 20px;
+            max-width: 340px;
+        }
+        
+        &-form {
+            margin-bottom: 5px;
+        }
+
+        &-input {
+            background-color: var(--color-gray-100);
+            border: 1px solid var(--corporate-v-1);
+            padding: 0 12px 0 34px;
+            background-image: url(../img/input__mail.svg);
+            background-size: 22px 17px;
+            background-repeat: no-repeat;
+            background-position: 6px 50%;
+            height: 40px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--corporate-v-1);
+            min-width: 230px;
+
+            &::placeholder {
+                font-weight: 900;
+                color: var(--corporate-v-1);
+            }
+        }
+
+        &-button {
+            padding: 10px 15px;
+            border-radius: 4px;
+            background-color: var(--corporate-v-0);
+            color: var(--color-gray-100);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            height: 40px;
+        }
+
+        &-licenze {
+            font-weight: 300;
+            color: var(--color-gray-100);
+            font-size: 12px;
+            line-height: 14px;
+            max-width: 350px;
+            display: block;
+        }
+
+        &-link {
+            color: lighten(#337AB7, 20.25%);
+            text-decoration: underline;
+            transition: all 0.2s;
+
+            &:hover, &:focus, &:active {
+                color: var(--color-gray-100);
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    &__bottom {
+        margin-top: 35px;
+        padding: 15px 0;
+        background-color: var(--corporate-v-0);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-gray-100);
+        transition: all 0.2s;
+
+        .container {
+            @include flex-all-sb;
+
+            @include before('md') {
+                @include flex-all-center;
+            }
+        }
+
+        &-link {
+            color: var(--color-gray-100);
+            text-decoration: underline;
+            @include before('md') {
+                margin-top: 5px;
+            }
+
+            &:hover, &:focus, &:active {
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    &__company {
+        @include before('xl') {
+            display: none;
+        }
+    }
+}

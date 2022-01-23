@@ -1,0 +1,81 @@
+.scrollableList {
+    display: none;
+    margin-top: 50px;
+    position: relative;
+
+    @include before('xl') {
+        display: block;  
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        color: var(--corporate-v-0);
+        margin-bottom: 15px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100vw;
+        position: relative;
+        margin-left: -16px;
+        left: 0;
+        padding: 10px 0px 10px 16px;
+        scroll-snap-type: x proximity;
+        scroll-padding: 0 20px;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        &:after {
+            content: "";
+            height: 20px;
+            width: 20px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__item {
+        padding: 20px;
+        padding-right: 15px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+        display: flex;
+        flex-direction: column;
+        min-width: 285px;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        &-img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-bottom: 15px;
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: var(--corporate-v-1);
+            margin-bottom: 15px;
+        }
+
+        &-description {
+            color: var(--corporate-v-1);
+            margin-top: auto;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

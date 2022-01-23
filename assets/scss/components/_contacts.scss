@@ -1,0 +1,350 @@
+.contacts {
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    @include before('xl') {
+      flex-direction: column;
+    }
+
+    p {
+      @include before('xl') {
+        display: none;
+      }
+    }
+  }
+
+
+
+  &__list {
+    @include after('xl') {
+      max-width: 715px;
+    }
+  }
+
+  &__map {
+    @include after('xl') {
+      max-width: 575px;
+    }
+  }
+
+  &__form {
+    background-color: var(--color-gray-100);
+    padding: 50px 0;
+    margin-top: 55px;
+    margin-bottom: -130px;
+
+    @include before('xxl') {
+      margin-bottom: -80px;
+    }
+
+    @include before('md') {
+      padding: 30px 0 50px;
+      margin-top: 30px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--corporate-v-1);
+      line-height: 24px;
+      margin-bottom: 35px;
+
+      @include before('md') {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__all {
+    display: flex;
+    flex-direction: column;
+
+    @include after('xl') {
+      padding-top: 35px;
+    }
+  }
+
+  &__department {
+
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      .contacts__department-content {
+        border-bottom: none;
+      }
+    }
+
+    &-block {
+      position: relative;
+      padding-left: 45px;
+      display: flex;
+      flex-direction: column;
+      min-width: 260px;
+      margin-bottom: 25px;
+
+      @include before('xl') {
+        min-width: 50%;
+        margin-bottom: 20px;
+      }
+
+      &::before {
+        content: '';
+        background-color: rgba(233, 236, 239, 0.5);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 22px 22px;
+        border-radius: 4px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 0;
+      }
+
+      &--address {
+        &::before {
+          background-image: url(../img/hotline_address.svg);
+        }
+      }
+
+      &--mail {
+        &::before {
+          background-image: url(../img/input__mail.svg);
+          background-size: 20px 20px;
+        }
+      }
+
+      &--phone {
+        &::before {
+          background-image: url(../img/hotline_phone.svg);
+        }
+      }
+    }
+
+    &-division {
+      font-size: 20px;
+      line-height: 24px;
+      color: var(--corporate-v-1);
+      font-weight: 700;
+      margin-bottom: 40px;
+
+      @include before('xl') {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 0 20px;
+      border-bottom: 1px solid #E9ECEF;
+    }
+
+    &-title {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 800;
+      color: var(--corporate-v-2);
+    }
+
+    &-info {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 700;
+      color: var(--corporate-v-0);
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+
+      &--link {
+        transition: all 0.2s;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: var(--corporate-v-3);
+          transition: all 0.2s;
+        }
+      }
+    }
+
+    &-tooltip {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__list {
+
+    &-block {
+      position: relative;
+      padding-left: 45px;
+      display: flex;
+      flex-direction: column;
+
+      @include before('xl') {
+        min-width: 50%;
+      }
+
+      &::before {
+        content: '';
+        background-color: rgba(233, 236, 239, 0.5);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 25px 25px;
+        border-radius: 4px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 0;
+      }
+
+      &--time {
+        &::before {
+          background-image: url(../img/hotline_time.svg);
+        }
+      }
+
+      &--telegram {
+        &::before {
+          background-image: url(../img/hotline_telegram.svg);
+        }
+      }
+
+      &--mail {
+        &::before {
+          background-image: url(../img/input__mail.svg);
+          background-size: 22px 22px;
+        }
+      }
+
+      &--phone {
+        &::before {
+          background-image: url(../img/hotline_phone.svg);
+        }
+      }
+    }
+
+    &-title {
+      color: var(--corporate-v-2);
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &-info {
+      margin-top: 5px;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: var(--corporate-v-0);
+
+      &--link {
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          color: var(--corporate-v-3);
+        }
+      }
+    }
+  }
+
+  &__map {
+    &-yandex {
+      background: url(../img/map_bg.jpg) no-repeat;
+      background-size: cover;
+      max-height: 490px;
+      height: 100%;
+      overflow: hidden;
+
+      @include before('xl') {
+        max-height: 400px;
+      }
+
+      @include before('md') {
+        max-height: 330px;
+      }
+    }
+  }
+
+
+  &__scheme {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    gap: 10px;
+
+    @include before('md') {
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    &-item {
+      max-width: 275px;
+
+      @include before('xl') {
+        max-width: 45%;
+      }
+
+      @include before('md') {
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    &-metro {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 700;
+      color: #FFA500;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+    }
+
+    &-bus {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--corporate-v-1);
+
+      p {
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    &-tooltip {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+      color: var(--corporate-v-1);
+      margin-top: 15px;
+
+      p {
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+}

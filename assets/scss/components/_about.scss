@@ -1,0 +1,245 @@
+.about {
+    &__director {
+        padding: 50px 0;
+        margin: 35px 0 55px;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: var(--color-gray-100);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 100vw;
+            height: 100%;
+            z-index: -1;
+        }
+
+        @include before('lg') {
+            padding: 40px 0;
+            margin: 20px 0 30px;
+        }
+
+        @include before('md') {
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+
+        &-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1230px;
+            margin: 0 auto;
+
+            @include before('md') {
+                flex-direction: column;
+            }
+        }
+
+        &-photo {
+            display: flex;
+            align-items: center;
+
+            @include from-to('md', 'lg') {
+                flex-direction: column;
+            }
+        }
+
+        &-img {
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+            background-color: #fff;
+            width: 250px;
+            height: 250px;
+            margin-right: 50px;
+            flex-shrink: 0;
+
+            @include before('md') {
+               width: 150px;
+               height: 150px;
+               margin-right: 10px;
+            }
+        }
+
+        &-image {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-name {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22px;
+            color: var(--corporate-v-1);
+
+            @include from-to('md', 'lg') {
+                margin-top: 15px;
+            }
+
+            @include before('lg') {
+                display: none;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            &--mobail {
+                display: none;
+                @include before('lg') {
+                    display: block;
+                }
+            }
+        }
+
+        &-status {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            color: var(--corporate-v-1);
+
+            @include before('md') {
+                margin-top: 10px;
+            }
+        }
+
+        &-quote {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+            color: var(--corporate-v-1);
+            margin-top: 25px;
+
+            @include from-to('md', 'lg') {
+                margin-top: 0;
+            }
+
+            @include before('md') {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &__all {
+
+        padding-top: 40px;
+        border-top: 1px solid var(--color-gray-200);
+
+        &.scrollableList {
+            display: block;
+        }
+
+        .scrollableList__items {
+            @include after('xl') {
+                width: 100%;
+                margin-left: 0;
+                padding: 10px 2px 5px;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        &-block {
+            box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+            background-color: rgba(248, 249, 250, 1);
+            border-radius: 4px;
+            min-width: 320px;
+            transition: all 0.2s;
+
+            &:hover, &:focus {
+                background-color: #fff;
+                transition: all 0.2s;
+            }
+
+            &:not(:last-child) {
+                margin-right: 20px;
+
+                @include before('md') {
+                    margin-right: 15px;
+                }
+            }
+
+            @include before('md') {
+              min-width: 270px;
+            }
+
+            @include after('xl') {
+              width: calc(100% / 4);
+              min-width: auto;
+            }
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: var(--corporate-v-1);
+            transition: all 0.2s;
+            padding: 30px;
+
+            svg {
+                fill: var(--corporate-v-1);
+                transition: all 0.2s;
+            }
+
+            &:hover, &:focus {
+                color: var(--corporate-v-2);
+                transition: all 0.2s;
+
+                svg {
+                    fill: var(--corporate-v-2);
+                    transition: all 0.2s;
+                }
+            }
+
+            @include before('md') {
+                padding: 25px;
+            }
+        }
+
+        &-img {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            margin-right: 30px;
+
+            svg {
+                width: 56px;
+                height: 56px;
+            }
+
+            @include before('md') {
+                width: 45px;
+                height: 45px;
+                margin-right: 20px;
+
+                svg {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-title {
+            font-size: 22px;
+            line-height: 28px;
+
+            @include before('md') {
+                font-size: 20px;
+            }
+        }
+    }
+}
